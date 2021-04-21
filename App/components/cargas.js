@@ -1,5 +1,6 @@
 import React from 'react';
 import {View,Text,FlatList,TouchableOpacity,StyleSheet,Button,ImageBackground} from 'react-native';
+import Perfil from './perfil';
 
 const cargas = [
     {
@@ -66,11 +67,12 @@ export default function Cargas(){
     return(
         <View style={styles.container}>
             <ImageBackground source={require('../images/background.jpg')}
-            style={{
-                flex: 1,
-                resizeMode: "cover",
-                justifyContent: "center"
-              }}>
+                style={{
+                    flex: 1,
+                    resizeMode: "cover",
+                    justifyContent: "center"
+                }}>
+            <Perfil/>
             <View style={styles.flatListContainer}>
                 <FlatList
                     data={cargas}
