@@ -13,7 +13,6 @@ export default class App extends Component {
     return(
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Underway" component={Cargas} />
         </Stack.Navigator>
       </NavigationContainer>
     );
