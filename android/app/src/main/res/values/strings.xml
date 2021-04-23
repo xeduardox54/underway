@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Underway</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD2Fz1BSC8k7dW0xU820bKb4ctZoThnvZ0</string>
 </resources>

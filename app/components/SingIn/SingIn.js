@@ -53,7 +53,7 @@ export default class SingIn extends Component {
     ) {
       this.props.navigation.navigate('Pedidos');
     } else if (
-      this.state.userValue == 'Rodrigo' ||
+      this.state.userValue == 'Rodrigo' &&
       this.state.passwordValue == '1234'
     ) {
       this.props.navigation.navigate('Underway');
