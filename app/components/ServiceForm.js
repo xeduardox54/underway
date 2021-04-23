@@ -10,21 +10,29 @@ import { useInputValue } from '../hooks/useInputValue';
 
 export const ServiceForm = ({ onSubmit }) => {
   // Campos del formulario
-  const dni = useInputValue('');
-  const ubicacion = useInputValue('');
-  const destino = useInputValue('');
-  const material = useInputValue('');
+  const foto = useInputValue('');
+  const nombreCliente = useInputValue('');
+  const imagenCarga = useInputValue('');
+  const calificación = useInputValue('');
+  const nombreCarga = useInputValue('');
+  const ubicacionInicio = useInputValue('');
+  const ubicacionDestino = useInputValue('');
   const precio = useInputValue('');
+  const descripcionPedido = useInputValue('');
 
   // Controlar el evento Press del boton
   const handlePress = () => {
     // Crear el Json con los valores del formulario
     const values = {
-      dni: dni.value,
-      ubicacion: ubicacion.value,
-      destino: destino.value,
-      material: material.value,
-      precio: precio.value,
+      foto: foto.value,
+      nombreCliente: nombreCliente.value,
+      carga: imagenCarga.value,
+      calificacion: calificación.value,
+      Carga: nombreCarga.value,
+      UbicacionInicio: ubicacionInicio.value,
+      UbicacionDestino: ubicacionDestino.value,
+      Precio: precio.value,
+      DescripcionPedido: descripcionPedido.value,
     };
 
     // Enviar el JSON al componente padre
@@ -38,39 +46,57 @@ export const ServiceForm = ({ onSubmit }) => {
       </View>
       <View style={styles.formContainer}>
         <View style={styles.formInputContainer}>
-          <Text style={styles.formInputLabel}>DNI</Text>
+          <Text style={styles.formInputLabel}>Nombre</Text>
           <TextInput
-            onChangeText={dni.onChange}
-            value={dni.value}
+            onChangeText={nombreCliente.onChange}
+            value={nombreCliente.value}
             style={styles.formInput}
-            placeholder="Ingresa tu DNI"
+            placeholder="Ingresa su nombre"
           />
         </View>
         <View style={styles.formInputContainer}>
-          <Text style={styles.formInputLabel}>Ubicación</Text>
+          <Text style={styles.formInputLabel}>Foto</Text>
           <TextInput
-            onChangeText={ubicacion.onChange}
-            value={ubicacion.value}
+            onChangeText={foto.onChange}
+            value={foto.value}
             style={styles.formInput}
-            placeholder="Ingresa tu Ubicación"
+            placeholder="Ingresa el link de su foto"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Imagen Carga</Text>
+          <TextInput
+            onChangeText={imagenCarga.onChange}
+            value={imagenCarga.value}
+            style={styles.formInput}
+            placeholder="Ingresa el link de su imagen"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Calificación</Text>
+          <TextInput
+            onChangeText={calificación.onChange}
+            value={calificación.value}
+            style={styles.formInput}
+            placeholder="Ingresa su calificación"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Inicio</Text>
+          <TextInput
+            onChangeText={ubicacionInicio.onChange}
+            value={ubicacionInicio.value}
+            style={styles.formInput}
+            placeholder="Ingresa el lugar de inicio"
           />
         </View>
         <View style={styles.formInputContainer}>
           <Text style={styles.formInputLabel}>Destino</Text>
           <TextInput
-            onChangeText={destino.onChange}
-            value={destino.value}
+            onChangeText={ubicacionDestino.onChange}
+            value={ubicacionDestino.value}
             style={styles.formInput}
-            placeholder="Ingresa el Destino"
-          />
-        </View>
-        <View style={styles.formInputContainer}>
-          <Text style={styles.formInputLabel}>Material</Text>
-          <TextInput
-            onChangeText={material.onChange}
-            value={material.value}
-            style={styles.formInput}
-            placeholder="Ingresa el tipo de material"
+            placeholder="Ingresa el lugar de destino"
           />
         </View>
         <View style={styles.formInputContainer}>
@@ -80,6 +106,15 @@ export const ServiceForm = ({ onSubmit }) => {
             value={precio.value}
             style={styles.formInput}
             placeholder="Ingresa el precio"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Descripcion</Text>
+          <TextInput
+            onChangeText={precio.onChange}
+            value={precio.value}
+            style={styles.formInput}
+            placeholder="Ingresa una pequeña descripción"
           />
         </View>
         <View>
