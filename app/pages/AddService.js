@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, ToastAndroid, View } from 'react-native';
 import Truck from '../../img/form-image.jpg';
-import { ServiceForm } from '../components/ServiceForm';
+import { ServiceForm } from '../components/ServiceForm/ServiceForm';
 
 const API = 'http://192.168.50.39:3000';
 
@@ -28,7 +28,7 @@ export const AddService = ({ navigation, route }) => {
             25,
             50,
           );
-          navigation.popToTop();
+          navigation.navigate('Underway');
         },
         error => {
           ToastAndroid.showWithGravityAndOffset(

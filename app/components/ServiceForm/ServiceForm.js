@@ -81,6 +81,16 @@ export const ServiceForm = ({ onSubmit }) => {
             placeholder="Ingresa su calificación"
           />
         </View>
+
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Carga</Text>
+          <TextInput
+            onChangeText={nombreCarga.onChange}
+            value={nombreCarga.value}
+            style={styles.formInput}
+            placeholder="Ingresa el nombre de su carga"
+          />
+        </View>
         <View style={styles.formInputContainer}>
           <Text style={styles.formInputLabel}>Inicio</Text>
           <TextInput
