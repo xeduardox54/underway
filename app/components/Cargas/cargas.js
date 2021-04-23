@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, { Component, useState } from 'react';
 import {
   View,
   FlatList,
@@ -12,9 +12,9 @@ import Perfil from '../Perfil/perfil';
 import Star from '../../../img/estrella16.png';
 import Dolar from '../../../img/dolar128.png';
 import Dialog from 'react-native-dialog';
-import {IconButton, Colors} from 'react-native-paper';
+import { IconButton, Colors } from 'react-native-paper';
 
-const API = 'http://192.168.0.143:3000';
+const API = 'http://192.168.50.39:3000';
 function Item({
   nombreCliente,
   Carga,
@@ -41,9 +41,9 @@ function Item({
   return (
     <View style={styles.item}>
       <View style={styles.item1}>
-        <View style={{paddingTop: 15}}>
+        <View style={{ paddingTop: 15 }}>
           <Image
-            source={{uri: foto}}
+            source={{ uri: foto }}
             style={{
               height: 55,
               width: 60,
@@ -53,14 +53,14 @@ function Item({
             }}
           />
           <Text style={styles.detalle}>{nombreCliente}</Text>
-          <View style={{flexDirection: 'row'}}>
-            <Image source={Star} style={{marginStart: 8}} />
-            <Text style={{marginStart: 5, color: '#fff', fontWeight: 'bold'}}>
+          <View style={{ flexDirection: 'row' }}>
+            <Image source={Star} style={{ marginStart: 8 }} />
+            <Text style={{ marginStart: 5, color: '#fff', fontWeight: 'bold' }}>
               {calificacion}
             </Text>
           </View>
         </View>
-        <View style={{flexDirection: 'column'}}>
+        <View style={{ flexDirection: 'column' }}>
           <Text style={styles.title}>{Carga}</Text>
           <Text numberOfLines={3} style={styles.resumen}>
             {DescripcionPedido}
@@ -77,7 +77,7 @@ function Item({
 const ListEmpty = () => {
   return (
     <View style={styles.item}>
-      <Text style={{textAlign: 'center', color: 'white', fontSize: 25}}>
+      <Text style={{ textAlign: 'center', color: 'white', fontSize: 25 }}>
         Sin cargas publicadas
       </Text>
     </View>
@@ -124,18 +124,22 @@ export default class Cargas extends Component {
             resizeMode: 'cover',
             justifyContent: 'center',
           }}>
-          <Perfil foto={'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?itok=fl2H3Opv'} nombre={""}/>
+          <Perfil
+            foto={
+              'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?itok=fl2H3Opv'
+            }
+            nombre={''}
+          />
           <View style={styles.flatListContainer}>
             <FlatList
               data={this.state.items.length > 0 ? this.state.items : []}
-              renderItem={({item}) => {
+              renderItem={({ item }) => {
                 return (
-                  <TouchableOpacity 
-                    onPress={
-                      ()=>this.props.navigation.navigate(
-                        'CargasDetails',
-                        {itemObject:item}
-                        )
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate('CargasDetails', {
+                        itemObject: item,
+                      })
                     }>
                     <Item
                       nombreCliente={item.nombreCliente}

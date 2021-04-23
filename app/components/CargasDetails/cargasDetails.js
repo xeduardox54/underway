@@ -14,7 +14,7 @@ import Dolar from '../../../img/dolar128.png';
 import Dialog from 'react-native-dialog';
 import { IconButton, Colors } from 'react-native-paper';
 
-const API = 'http://192.168.0.143:3000';
+const API = 'http://192.168.50.39:3000';
 function Item({
   nombreCliente,
   Carga,
@@ -27,42 +27,42 @@ function Item({
   return (
     <View style={styles.item}>
       <View>
-          <Text style={styles.title}>Carga: {Carga}</Text>
-          <Text style={styles.title}>Descripción: {DescripcionPedido}</Text>
-          <Text style={styles.title}>Destino: {UbicacionDestino}</Text>
-          <Text style={styles.title}>Ubicación: {UbicacionInicio}</Text>
-          <Text style={styles.title}>Precio: {Precio}</Text>
-          <Text style={styles.title}>Calificacion: {calificacion}</Text>
+        <Text style={styles.title}>Carga: {Carga}</Text>
+        <Text style={styles.title}>Descripción: {DescripcionPedido}</Text>
+        <Text style={styles.title}>Destino: {UbicacionDestino}</Text>
+        <Text style={styles.title}>Ubicación: {UbicacionInicio}</Text>
+        <Text style={styles.title}>Precio: {Precio}</Text>
+        <Text style={styles.title}>Calificacion: {calificacion}</Text>
       </View>
     </View>
   );
 }
 
-export default function CargasDetails({route}) {
-    const item = route.params.itemObject
-    return (
-      <View style={styles.container}>
-        <ImageBackground
-          source={require('../../../img/background.jpg')}
-          style={{
-            flex: 1,
-            resizeMode: 'cover',
-            justifyContent: 'center',
-          }}>
-          <Perfil foto={item.foto} nombre={item.nombreCliente}/>
-          <View style={styles.flatListContainer}>
-              <Item 
-                Carga={item.Carga}
-                DescripcionPedido={item.DescripcionPedido}
-                UbicacionDestino={item.UbicacionDestino}
-                UbicacionInicio={item.UbicacionInicio}
-                Precio={item.Precio}
-                calificacion={item.calificacion}
-              />
-          </View>
-        </ImageBackground>
-      </View>
-    );
+export default function CargasDetails({ route }) {
+  const item = route.params.itemObject;
+  return (
+    <View style={styles.container}>
+      <ImageBackground
+        source={require('../../../img/background.jpg')}
+        style={{
+          flex: 1,
+          resizeMode: 'cover',
+          justifyContent: 'center',
+        }}>
+        <Perfil foto={item.foto} nombre={item.nombreCliente} />
+        <View style={styles.flatListContainer}>
+          <Item
+            Carga={item.Carga}
+            DescripcionPedido={item.DescripcionPedido}
+            UbicacionDestino={item.UbicacionDestino}
+            UbicacionInicio={item.UbicacionInicio}
+            Precio={item.Precio}
+            calificacion={item.calificacion}
+          />
+        </View>
+      </ImageBackground>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

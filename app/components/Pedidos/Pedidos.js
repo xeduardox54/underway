@@ -112,7 +112,7 @@ export default class Pedidos extends Component {
   };
 
   async componentDidMount() {
-    await fetch('http://192.168.0.143:3000/pedidos')
+    await fetch('http://192.168.50.39:3000/pedidos')
       .then(res => res.json())
       .then(
         result => {
