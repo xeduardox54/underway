@@ -102,8 +102,8 @@ export const ServiceForm = ({ onSubmit }) => {
         <View style={styles.formInputContainer}>
           <Text style={styles.formInputLabel}>Precio</Text>
           <TextInput
-            onChangeText={Precio.onChange}
-            value={Precio.value}
+            onChangeText={precio.onChange}
+            value={precio.value}
             style={styles.formInput}
             placeholder="Ingresa el precio"
           />

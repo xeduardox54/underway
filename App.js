@@ -7,15 +7,6 @@ import Cargas from './app/components/cargas';
 
 export default class App extends Component {
   render() {
-    const datos = [
-      {
-        destino: 'Arequipa',
-        dni: '76394311',
-        material: 'Origamis',
-        precio: '150',
-        ubicacion: 'Lima',
-      },
-    ];
 
     const Stack = createStackNavigator();
 
