@@ -14,7 +14,7 @@ import Dolar from '../../../img/dolar128.png';
 import Dialog from 'react-native-dialog';
 import { IconButton, Colors } from 'react-native-paper';
 
-const API = 'http://192.168.50.39:3000';
+const API = 'http://192.168.0.143:3000';
 function Item({
   nombreCliente,
   Carga,
@@ -133,7 +133,7 @@ export default class Cargas extends Component {
     return (
       <View style={styles.container}>
         <ImageBackground
-          source={require('../../img/background.jpg')}
+          source={require('../../../img/background.jpg')}
           style={{
             flex: 1,
             resizeMode: 'cover',
