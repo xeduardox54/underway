@@ -28,7 +28,7 @@ export const AddService = ({ navigation, route }) => {
             25,
             50,
           );
-          navigation.popToTop();
+          navigation.navigate('Underway');
         },
         error => {
           ToastAndroid.showWithGravityAndOffset(
