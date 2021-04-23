@@ -3,10 +3,16 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import Truck from '../../img/form-image.jpg';
 import { ServiceForm } from '../components/ServiceForm';
 
-export const AddService = () => {
+export const AddService = ({navigation,route}) => {
   // Datos del formulario. values es el JSON
   const onSubmit = values => {
-    console.log(values);
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "Formulario" }],
+    });
+    route.params.datos.value.push(values)
+    console.log(route.params.datos.value);
+    navigation.popToTop()
   };
 
   return (

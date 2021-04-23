@@ -1,51 +1,15 @@
 import React from 'react';
 import {View,Text,FlatList,TouchableOpacity,StyleSheet,Button,ImageBackground} from 'react-native';
 import Perfil from './perfil';
-
-const cargas = [
-    {
-        id: '1',
-        title: 'First Item',
-        descripcion: '----------Text1----------',
-    },
-    {
-        id: '2',
-        title: 'Second Item',
-        descripcion: '----------Text2----------',
-    },
-    {
-        id: '3',
-        title: 'Third Item',
-        descripcion: '----------Text3----------',
-    },
-    {
-        id: '4',
-        title: 'Third Item',
-        descripcion: '----------Text3----------',
-    },
-    {
-        id: '5',
-        title: 'Third Item',
-        descripcion: '----------Text3----------',
-    },
-    {
-        id: '6',
-        title: 'Third Item',
-        descripcion: '----------Text3----------',
-    },
-    {
-        id: '7',
-        title: 'Third Item',
-        descripcion: '----------Text3----------',
-    }
-];
+import { useListCargas } from '../hooks/useListCargas';
 
 function Item ({item}) {
     return (
         <View style = {styles.item}>
             <View style={{flexDirection:"column"}}>
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.id}>{item.descripcion}</Text>
+                <Text style={styles.title}>{item.destino}</Text>
+                <Text style={styles.id}>{item.material}</Text>
+                <Text style={styles.id}>{item.precio}</Text>
             </View>
             <View style={{marginLeft: 'auto'}}>
                 <TouchableOpacity>
@@ -63,7 +27,16 @@ const ListEmpty = () => {
     );
 };
 
-export default function Cargas(){
+export default function Cargas({navigation}){
+    const datos = useListCargas([
+        {
+            destino: 'Arequipa',
+            dni: '76394311',
+            material: 'Origamis',
+            precio: '150',
+            ubicacion: 'Lima',
+        }]);
+    console.log(datos.value)
     return(
         <View style={styles.container}>
             <ImageBackground source={require('../images/background.jpg')}
@@ -75,7 +48,7 @@ export default function Cargas(){
             <Perfil/>
             <View style={styles.flatListContainer}>
                 <FlatList
-                    data={cargas}
+                    data={datos.value}
                     renderItem={({item}) => {
                         return(
                             <TouchableOpacity>
@@ -87,7 +60,9 @@ export default function Cargas(){
                     ListEmptyComponent={ListEmpty}
                 />
             </View>
-            <Button title='Publicar'/>
+            <Button
+                title='Publicar'
+                onPress={() => navigation.navigate('Formulario',{datos:datos})}/>
             </ImageBackground>
         </View>
     );
