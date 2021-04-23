@@ -21,7 +21,7 @@ export default class App extends Component {
           <Stack.Screen name="SingIn" component={SingIn} />
           <Stack.Screen name="Mapas" component={Mapa} />
           <Stack.Screen name="Underway" component={Cargas} />
-          <Stack.Screen name="Details" component={CargasDetails} />
+          <Stack.Screen name="CargasDetails" component={CargasDetails} />
           <Stack.Screen name="Formulario" component={AddService} />
         </Stack.Navigator>
       </NavigationContainer>

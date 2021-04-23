@@ -26,13 +26,13 @@ function Item({
 }) {
   return (
     <View style={styles.item}>
-      <View style={styles.item1}>
-          <Text>{Carga}</Text>
-          <Text>{DescripcionPedido}</Text>
-          <Text>{UbicacionDestino}</Text>
-          <Text>{UbicacionInicio}</Text>
-          <Text>{Precio}</Text>
-          <Text>{calificacion}</Text>
+      <View>
+          <Text style={styles.title}>Carga: {Carga}</Text>
+          <Text style={styles.title}>Descripción: {DescripcionPedido}</Text>
+          <Text style={styles.title}>Destino: {UbicacionDestino}</Text>
+          <Text style={styles.title}>Ubicación: {UbicacionInicio}</Text>
+          <Text style={styles.title}>Precio: {Precio}</Text>
+          <Text style={styles.title}>Calificacion: {calificacion}</Text>
       </View>
     </View>
   );

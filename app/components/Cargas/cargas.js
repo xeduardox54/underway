@@ -70,22 +70,6 @@ function Item({
           </Text>
           <Text style={styles.precio}>PEN: {Precio} </Text>
         </View>
-        <IconButton
-          style={{marginTop: 20, marginStart: 15}}
-          icon={Dolar}
-          color={Colors.green500}
-          size={35}
-          onPress={showDialog}
-        />
-        <Dialog.Container visible={visible}>
-          <Dialog.Title style={{textAlign: 'center'}}>{Carga}</Dialog.Title>
-          <Dialog.Description>{DescripcionPedido}</Dialog.Description>
-          <Dialog.Description>S/.{Precio}</Dialog.Description>
-          <Dialog.Description>Ingrese su Oferta</Dialog.Description>
-          <Dialog.Button label="Cancelar" onPress={handleCancel} />
-          <Dialog.Button label="Enviar Oferta" onPress={handleDelete} />
-          <Dialog.Input />
-        </Dialog.Container>
       </View>
     </View>
   );
@@ -111,6 +95,7 @@ export default class Cargas extends Component {
       error: null,
     };
   }
+
   async componentDidMount() {
     await fetch(`${API}/pedidos`)
       .then(res => res.json())
@@ -148,7 +133,7 @@ export default class Cargas extends Component {
                   <TouchableOpacity 
                     onPress={
                       ()=>this.props.navigation.navigate(
-                        'Details',
+                        'CargasDetails',
                         {itemObject:item}
                         )
                     }>
