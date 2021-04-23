@@ -3,11 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View } from 'react-native';
 import { AddService } from './app/pages/AddService';
-import Cargas from './app/components/cargas';
+import Cargas from './app/components/Cargas/cargas';
 
 export default class App extends Component {
   render() {
-
     const Stack = createStackNavigator();
 
     return (

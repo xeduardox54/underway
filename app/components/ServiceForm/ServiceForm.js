@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useInputValue } from '../hooks/useInputValue';
+import { useInputValue } from '../../hooks/useInputValue';
 
 export const ServiceForm = ({ onSubmit }) => {
   // Campos del formulario
@@ -111,8 +111,8 @@ export const ServiceForm = ({ onSubmit }) => {
         <View style={styles.formInputContainer}>
           <Text style={styles.formInputLabel}>Descripcion</Text>
           <TextInput
-            onChangeText={precio.onChange}
-            value={precio.value}
+            onChangeText={descripcionPedido.onChange}
+            value={descripcionPedido.value}
             style={styles.formInput}
             placeholder="Ingresa una pequeña descripción"
           />
