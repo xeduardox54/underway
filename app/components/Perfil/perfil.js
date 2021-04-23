@@ -2,17 +2,16 @@ import React from 'react';
 import { Image, StyleSheet, View, Text } from 'react-native';
 import { color } from 'react-native-reanimated';
 
-export default function Perfil() {
+export default function Perfil({foto,nombre}) {
   return (
     <View style={styles.Top}>
       <Image
         source={{
-          uri:
-            'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?itok=fl2H3Opv',
+          uri: foto
         }}
         style={styles.image}
       />
-      <Text style={styles.usuario}>Nombre_Usuario</Text>
+      <Text style={styles.usuario}>{nombre}</Text>
     </View>
   );
 }

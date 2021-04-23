@@ -20,7 +20,7 @@
     "react-native-dialog": "^8.0.1",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-google-places-autocomplete": "^2.2.0",
-    "react-native-maps": "0.28.0",
+    "react-native-maps": "^0.28.0",
     "react-native-maps-directions": "^1.8.0",
     "react-native-paper": "^4.8.0",
     "react-native-ratings": "^8.0.3",

@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AddService } from './app/pages/AddService';
 import Cargas from './app/components/Cargas/cargas';
+import CargasDetails from './app/components/CargasDetails/cargasDetails';
 import Pedidos from './app/components/Pedidos/Pedidos';
 import Details from './app/components/Detalles/Details';
 import Mapa from './app/components/Mapa/Mapa';
@@ -20,6 +21,7 @@ export default class App extends Component {
           <Stack.Screen name="SingIn" component={SingIn} />
           <Stack.Screen name="Mapas" component={Mapa} />
           <Stack.Screen name="Underway" component={Cargas} />
+          <Stack.Screen name="CargasDetails" component={CargasDetails} />
           <Stack.Screen name="Formulario" component={AddService} />
         </Stack.Navigator>
       </NavigationContainer>

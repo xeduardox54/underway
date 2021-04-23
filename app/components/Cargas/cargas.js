@@ -70,22 +70,6 @@ function Item({
           </Text>
           <Text style={styles.precio}>PEN: {Precio} </Text>
         </View>
-        <IconButton
-          style={{marginTop: 20, marginStart: 15}}
-          icon={Dolar}
-          color={Colors.green500}
-          size={35}
-          onPress={showDialog}
-        />
-        <Dialog.Container visible={visible}>
-          <Dialog.Title style={{textAlign: 'center'}}>{Carga}</Dialog.Title>
-          <Dialog.Description>{DescripcionPedido}</Dialog.Description>
-          <Dialog.Description>S/.{Precio}</Dialog.Description>
-          <Dialog.Description>Ingrese su Oferta</Dialog.Description>
-          <Dialog.Button label="Cancelar" onPress={handleCancel} />
-          <Dialog.Button label="Enviar Oferta" onPress={handleDelete} />
-          <Dialog.Input />
-        </Dialog.Container>
       </View>
     </View>
   );
@@ -111,6 +95,7 @@ export default class Cargas extends Component {
       error: null,
     };
   }
+
   async componentDidMount() {
     await fetch(`${API}/pedidos`)
       .then(res => res.json())
@@ -139,13 +124,19 @@ export default class Cargas extends Component {
             resizeMode: 'cover',
             justifyContent: 'center',
           }}>
-          <Perfil />
+          <Perfil foto={'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?itok=fl2H3Opv'} nombre={""}/>
           <View style={styles.flatListContainer}>
             <FlatList
               data={this.state.items.length > 0 ? this.state.items : []}
               renderItem={({item}) => {
                 return (
-                  <TouchableOpacity>
+                  <TouchableOpacity 
+                    onPress={
+                      ()=>this.props.navigation.navigate(
+                        'CargasDetails',
+                        {itemObject:item}
+                        )
+                    }>
                     <Item
                       nombreCliente={item.nombreCliente}
                       Carga={item.Carga}
