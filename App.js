@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View } from 'react-native';
 import { AddService } from './app/pages/AddService';
 import Cargas from './app/components/Cargas/cargas';
+import CargasDetails from './app/components/CargasDetails/cargasDetails';
 
 export default class App extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class App extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Underway" component={Cargas} />
+          <Stack.Screen name="Details" component={CargasDetails} />
           <Stack.Screen name="Formulario" component={AddService} />
         </Stack.Navigator>
       </NavigationContainer>

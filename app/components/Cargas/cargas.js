@@ -139,13 +139,19 @@ export default class Cargas extends Component {
             resizeMode: 'cover',
             justifyContent: 'center',
           }}>
-          <Perfil />
+          <Perfil foto={'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?itok=fl2H3Opv'} nombre={""}/>
           <View style={styles.flatListContainer}>
             <FlatList
               data={this.state.items.length > 0 ? this.state.items : []}
               renderItem={({ item }) => {
                 return (
-                  <TouchableOpacity>
+                  <TouchableOpacity 
+                    onPress={
+                      ()=>this.props.navigation.navigate(
+                        'Details',
+                        {itemObject:item}
+                        )
+                    }>
                     <Item
                       nombreCliente={item.nombreCliente}
                       Carga={item.Carga}
