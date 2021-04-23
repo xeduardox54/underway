@@ -10,31 +10,29 @@ import { useInputValue } from '../hooks/useInputValue';
 
 export const ServiceForm = ({ onSubmit }) => {
   // Campos del formulario
-  const id = useInputValue(4);
-  const foto = useInputValue('https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fes%2Fvectors%2Fperfil-hombre-usuario-casa-humana-42914%2F&psig=AOvVaw3jZNtHYSK3YN4xyxWwd1jW&ust=1619237888086000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMD7mazBk_ACFQAAAAAdAAAAABAJ');
-  const nombreCliente = useInputValue('Eduardo');
-  const carga = useInputValue('');
-  const calificacion = useInputValue(5.5);
-  const Carga = useInputValue('');
-  const UbicacionInicio = useInputValue('');
-  const UbicacionDestino = useInputValue('');
-  const Precio = useInputValue('');
-  const DescripcionPedido = useInputValue('');
+  const foto = useInputValue('');
+  const nombreCliente = useInputValue('');
+  const imagenCarga = useInputValue('');
+  const calificación = useInputValue('');
+  const nombreCarga = useInputValue('');
+  const ubicacionInicio = useInputValue('');
+  const ubicacionDestino = useInputValue('');
+  const precio = useInputValue('');
+  const descripcionPedido = useInputValue('');
 
   // Controlar el evento Press del boton
   const handlePress = () => {
     // Crear el Json con los valores del formulario
     const values = {
-      id: id.value,
       foto: foto.value,
       nombreCliente: nombreCliente.value,
-      carga: carga.value,
-      calificacion: calificacion.value,
-      Carga: Carga.value,
-      UbicacionInicio: UbicacionInicio.value,
-      UbicacionDestino: UbicacionDestino.value,
-      Precio: Precio.value,
-      DescripcionPedido: DescripcionPedido.value,
+      carga: imagenCarga.value,
+      calificacion: calificación.value,
+      Carga: nombreCarga.value,
+      UbicacionInicio: ubicacionInicio.value,
+      UbicacionDestino: ubicacionDestino.value,
+      Precio: precio.value,
+      DescripcionPedido: descripcionPedido.value,
     };
 
     // Enviar el JSON al componente padre
@@ -48,30 +46,57 @@ export const ServiceForm = ({ onSubmit }) => {
       </View>
       <View style={styles.formContainer}>
         <View style={styles.formInputContainer}>
-          <Text style={styles.formInputLabel}>Ubicación</Text>
+          <Text style={styles.formInputLabel}>Nombre</Text>
           <TextInput
-            onChangeText={UbicacionInicio.onChange}
-            value={UbicacionInicio.value}
+            onChangeText={nombreCliente.onChange}
+            value={nombreCliente.value}
             style={styles.formInput}
-            placeholder="Ingresa la ubicación"
+            placeholder="Ingresa su nombre"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Foto</Text>
+          <TextInput
+            onChangeText={foto.onChange}
+            value={foto.value}
+            style={styles.formInput}
+            placeholder="Ingresa el link de su foto"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Imagen Carga</Text>
+          <TextInput
+            onChangeText={imagenCarga.onChange}
+            value={imagenCarga.value}
+            style={styles.formInput}
+            placeholder="Ingresa el link de su imagen"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Calificación</Text>
+          <TextInput
+            onChangeText={calificación.onChange}
+            value={calificación.value}
+            style={styles.formInput}
+            placeholder="Ingresa su calificación"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Inicio</Text>
+          <TextInput
+            onChangeText={ubicacionInicio.onChange}
+            value={ubicacionInicio.value}
+            style={styles.formInput}
+            placeholder="Ingresa el lugar de inicio"
           />
         </View>
         <View style={styles.formInputContainer}>
           <Text style={styles.formInputLabel}>Destino</Text>
           <TextInput
-            onChangeText={UbicacionDestino.onChange}
-            value={UbicacionDestino.value}
+            onChangeText={ubicacionDestino.onChange}
+            value={ubicacionDestino.value}
             style={styles.formInput}
-            placeholder="Ingresa el Destino"
-          />
-        </View>
-        <View style={styles.formInputContainer}>
-          <Text style={styles.formInputLabel}>Material</Text>
-          <TextInput
-            onChangeText={Carga.onChange}
-            value={Carga.value}
-            style={styles.formInput}
-            placeholder="Ingresa el tipo de material"
+            placeholder="Ingresa el lugar de destino"
           />
         </View>
         <View style={styles.formInputContainer}>
@@ -81,6 +106,15 @@ export const ServiceForm = ({ onSubmit }) => {
             value={Precio.value}
             style={styles.formInput}
             placeholder="Ingresa el precio"
+          />
+        </View>
+        <View style={styles.formInputContainer}>
+          <Text style={styles.formInputLabel}>Descripcion</Text>
+          <TextInput
+            onChangeText={precio.onChange}
+            value={precio.value}
+            style={styles.formInput}
+            placeholder="Ingresa una pequeña descripción"
           />
         </View>
         <View>

@@ -1,12 +1,45 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, ToastAndroid, View } from 'react-native';
 import Truck from '../../img/form-image.jpg';
 import { ServiceForm } from '../components/ServiceForm';
 
-export const AddService = () => {
+const API = 'http://192.168.50.39:3000';
+
+export const AddService = ({ navigation, route }) => {
   // Datos del formulario. values es el JSON
-  const onSubmit = values => {
-    console.log(values);
+  const onSubmit = async values => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    };
+
+    console.log(`${API}/pedidos/`);
+    await fetch(`${API}/pedidos/`, requestOptions)
+      .then(res => res.json())
+      .then(
+        result => {
+          ToastAndroid.showWithGravityAndOffset(
+            'Se agrego el servicio',
+            ToastAndroid.LONG,
+            ToastAndroid.BOTTOM,
+            25,
+            50,
+          );
+          navigation.popToTop();
+        },
+        error => {
+          ToastAndroid.showWithGravityAndOffset(
+            'Algo salio mal',
+            ToastAndroid.LONG,
+            ToastAndroid.BOTTOM,
+            25,
+            50,
+          );
+        },
+      );
   };
 
   return (
@@ -15,7 +48,9 @@ export const AddService = () => {
         <Image source={Truck} style={styles.image} />
       </View>
       <View style={styles.formContainer}>
-        <ServiceForm onSubmit={onSubmit} />
+        <ScrollView>
+          <ServiceForm onSubmit={onSubmit} />
+        </ScrollView>
       </View>
     </View>
   );
