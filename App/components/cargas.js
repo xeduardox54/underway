@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react';
+import React, {Component,useState} from 'react';
 import {View, FlatList, StyleSheet, Text, Image, TouchableOpacity, ImageBackground, Button} from 'react-native';
 import Perfil from './perfil';
 import Star from '../../img/estrella16.png';
@@ -76,7 +76,7 @@ function Item({
 const ListEmpty = () => {
     return (
         <View style={styles.item}>
-            <Text style={{textAlign: 'center'}}>Sin cargas publicadas</Text>
+            <Text style={{textAlign: 'center', color: 'white', fontSize: 25}}>Sin cargas publicadas</Text>
         </View>
     );
 };
@@ -111,7 +111,7 @@ export default class Cargas extends Component{
 	render() {
         return(
             <View style={styles.container}>
-                <ImageBackground source={require('../images/background.jpg')}
+                <ImageBackground source={require('../../img/background.jpg')}
                     style={{
                         flex: 1,
                         resizeMode: "cover",
