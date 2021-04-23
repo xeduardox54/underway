@@ -10,11 +10,8 @@ import {
 } from 'react-native';
 import Perfil from '../Perfil/perfil';
 import Star from '../../../img/estrella16.png';
-import Dolar from '../../../img/dolar128.png';
-import Dialog from 'react-native-dialog';
-import { IconButton, Colors } from 'react-native-paper';
 
-const API = 'http://192.168.50.39:3000';
+const API = 'http://192.168.0.143:3000';
 function Item({
   nombreCliente,
   Carga,
@@ -25,19 +22,6 @@ function Item({
   Precio,
   calificacion,
 }) {
-  const [visible, setVisible] = useState(false);
-
-  const showDialog = () => {
-    setVisible(true);
-  };
-
-  const handleCancel = () => {
-    setVisible(false);
-  };
-
-  const handleDelete = () => {
-    setVisible(false);
-  };
   return (
     <View style={styles.item}>
       <View style={styles.item1}>

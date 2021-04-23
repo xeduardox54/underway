@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, ImageBackground } from 'react-native';
 import { Rating } from 'react-native-ratings';
-import { DataTable } from 'react-native-paper';
 
 const image = {
   uri:

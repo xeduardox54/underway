@@ -3,7 +3,7 @@ import { Image, ScrollView, StyleSheet, ToastAndroid, View } from 'react-native'
 import Truck from '../../img/form-image.jpg';
 import { ServiceForm } from '../components/ServiceForm/ServiceForm';
 
-const API = 'http://192.168.50.39:3000';
+const API = 'http://192.168.0.143:3000';
 
 export const AddService = ({ navigation, route }) => {
   // Datos del formulario. values es el JSON
@@ -16,7 +16,6 @@ export const AddService = ({ navigation, route }) => {
       body: JSON.stringify(values),
     };
 
-    console.log(`${API}/pedidos/`);
     await fetch(`${API}/pedidos/`, requestOptions)
       .then(res => res.json())
       .then(
