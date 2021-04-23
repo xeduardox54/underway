@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   Top: {
     height: 70,
     flexDirection: "row",
-    backgroundColor: "yellow",
+    backgroundColor: 'rgba(0,0,0,0.5)',
     alignItems: "center",
     padding: 20,
     marginVertical: 6,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     width: 80, 
     borderRadius: 400/2,
     borderWidth:  3,
-    borderColor: '#F44336',
+    borderColor: 'gray',
   }, 
   usuario: {
     color:'white',
